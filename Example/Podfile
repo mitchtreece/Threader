@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Threader_Example', :exclusive => true do
+  pod 'Threader', :path => '../'
+end
+
+target 'Threader_Tests', :exclusive => true do
+  pod 'Threader', :path => '../'
+
+  
+end

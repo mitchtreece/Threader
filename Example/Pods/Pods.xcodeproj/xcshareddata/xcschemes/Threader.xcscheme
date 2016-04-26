@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5E33B0C76FE8B57C835444A7'
+               BlueprintIdentifier = '18334300C0CF85C97477F6F0'
                BlueprintName = 'Threader'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Threader.framework'>

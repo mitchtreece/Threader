@@ -82,13 +82,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35W-cb-6xt">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35W-cb-6xt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhp-nk-Civ">
-                                        <rect key="frame" x="242" y="288" width="117" height="24"/>
+                                        <rect key="frame" x="263" y="288" width="74" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="117" id="fsf-kX-YOS"/>
+                                            <constraint firstAttribute="width" constant="74" id="fsf-kX-YOS"/>
                                             <constraint firstAttribute="height" constant="24" id="mso-HF-HeT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>

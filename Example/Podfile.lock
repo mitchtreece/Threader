@@ -1,5 +1,5 @@
 PODS:
-  - Threader (0.1.0)
+  - Threader (1.0.0)
 
 DEPENDENCIES:
   - Threader (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Threader: 23ce9cae3fad86681ac4b8172b2b19254483fb03
+  Threader: a12909256823b9d1c3458a6ae7e63a0c03ba2d8f
 
 COCOAPODS: 0.39.0

@@ -43,36 +43,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>083A753BD805FD853CA9D6D42F7F6649</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Threader.framework</string>
-			<key>path</key>
-			<string>Threader.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>083D5C4F61E5118581EB2A6B804ABF63</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods_Threader_Example.framework</string>
-			<key>path</key>
-			<string>Pods_Threader_Example.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
 		<key>0AC0EA00B8BD16DB781868A02DA9B5FB</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -236,33 +206,6 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>172E2E5E435DBF1CD83414F3F160EFB6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2127D2B05BC8A32DA288D5C66E621487</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>083D5C4F61E5118581EB2A6B804ABF63</string>
-				<string>A29E6C95DF040E880EFDA865B11328A4</string>
-				<string>28E14A16098EA17A5A7F44CFF4B0C723</string>
-				<string>083A753BD805FD853CA9D6D42F7F6649</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>241C49139713BA89ABCE72286F2CF730</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -275,32 +218,6 @@
 			<string>Threader-prefix.pch</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>25759D9B83CB742FD770B48ED53641E2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Threader-Threader</string>
-			<key>target</key>
-			<string>F16A78510FF1A1CFE0E35CEE535D8F21</string>
-			<key>targetProxy</key>
-			<string>9FCD743BFE9EE618579FA50088F96F2C</string>
-		</dict>
-		<key>28E14A16098EA17A5A7F44CFF4B0C723</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Threader.bundle</string>
-			<key>path</key>
-			<string>Threader.bundle</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>2A500B3628F6DA508B43CDA46291CE7C</key>
 		<dict>
@@ -426,20 +343,6 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
-		<key>4174531576CB0478FAB5308F4AC4B4FC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>8389B594B712BEE135ECDCCC51FF3C74</string>
-				<string>D085A4D931C476B1DDB5EF99D910F471</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
 		<key>4341A3D27AAAE966449EF247ADE77C20</key>
 		<dict>
 			<key>baseConfigurationReference</key>
@@ -514,6 +417,21 @@
 			<string>sourcecode.c.h</string>
 			<key>path</key>
 			<string>Threader-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4775D2B335F627C25B3F9167B9CAB39A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9DF06E76A5F8A349C10ACE369C497A33</string>
+				<string>A037B82A9F2CCABE670BF69714B9A8EF</string>
+				<string>DDBD09EF794815634ED8F5446836C9D6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -804,13 +722,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>7795282E887BD0F02971F576FADE8ED7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>28E14A16098EA17A5A7F44CFF4B0C723</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>78DCA0296E9868AFE4182486738F4BB7</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -863,7 +774,7 @@
 				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
 				<string>D49C8FACAB9F3CDA025EA3E1F509D366</string>
 				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>2127D2B05BC8A32DA288D5C66E621487</string>
+				<string>4775D2B335F627C25B3F9167B9CAB39A</string>
 				<string>DD5E3FE26947CE8834AA8C3F4656E4B5</string>
 			</array>
 			<key>isa</key>
@@ -917,28 +828,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>8389B594B712BEE135ECDCCC51FF3C74</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D6DF1F8D4281349F7D7E8FDD18B86D0F</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>Threader</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
 		<key>88015C329BB08F73205902C7B07E910B</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -966,30 +855,6 @@
 			<string>Pods-Threader_Example-umbrella.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8E9E1D8FC30E2A28BC214E340CD86AC1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8F9DEBD300A9B2E64E28B164C7743E17</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>7795282E887BD0F02971F576FADE8ED7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
 		</dict>
 		<key>95FCEEE505A9BA7D6AA776A3DB1D47DC</key>
 		<dict>
@@ -1038,7 +903,7 @@
 			<key>productName</key>
 			<string>Pods-Threader_Example</string>
 			<key>productReference</key>
-			<string>083D5C4F61E5118581EB2A6B804ABF63</string>
+			<string>9DF06E76A5F8A349C10ACE369C497A33</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
@@ -1055,6 +920,21 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>9DF06E76A5F8A349C10ACE369C497A33</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_Threader_Example.framework</string>
+			<key>path</key>
+			<string>Pods_Threader_Example.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
 		<key>9FB0030ABE5F17475D9D865340FDFC9D</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -1069,20 +949,7 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>9FCD743BFE9EE618579FA50088F96F2C</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>F16A78510FF1A1CFE0E35CEE535D8F21</string>
-			<key>remoteInfo</key>
-			<string>Threader-Threader</string>
-		</dict>
-		<key>A29E6C95DF040E880EFDA865B11328A4</key>
+		<key>A037B82A9F2CCABE670BF69714B9A8EF</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>wrapper.framework</string>
@@ -1181,7 +1048,7 @@
 			<key>productName</key>
 			<string>Pods-Threader_Tests</string>
 			<key>productReference</key>
-			<string>A29E6C95DF040E880EFDA865B11328A4</string>
+			<string>A037B82A9F2CCABE670BF69714B9A8EF</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
@@ -1389,28 +1256,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D085A4D931C476B1DDB5EF99D910F471</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D6DF1F8D4281349F7D7E8FDD18B86D0F</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>Threader</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
 		<key>D29DA0A1C34B05F41A8B49D77B0AB9A9</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1450,7 +1295,7 @@
 			<key>mainGroup</key>
 			<string>7DB346D0F39D3F0E887471402A8071AB</string>
 			<key>productRefGroup</key>
-			<string>2127D2B05BC8A32DA288D5C66E621487</string>
+			<string>4775D2B335F627C25B3F9167B9CAB39A</string>
 			<key>projectDirPath</key>
 			<string></string>
 			<key>projectReferences</key>
@@ -1462,7 +1307,6 @@
 				<string>97FC93F45995C937455822081FF3AE0F</string>
 				<string>A8B8417B9E4CA3F8E2AD8C3D52F7E5FA</string>
 				<string>DACE578818A4E4DC75695D62A9818C43</string>
-				<string>F16A78510FF1A1CFE0E35CEE535D8F21</string>
 			</array>
 		</dict>
 		<key>D49C8FACAB9F3CDA025EA3E1F509D366</key>
@@ -1504,17 +1348,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D8769DA96497A94AFDDD18E1032016B9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
 		<key>DA254D2972B8604A63A2559E997EC890</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1550,15 +1383,12 @@
 			<array>
 				<string>88015C329BB08F73205902C7B07E910B</string>
 				<string>6AAA1A31C2F1D657228CA61B08B6FA8F</string>
-				<string>8F9DEBD300A9B2E64E28B164C7743E17</string>
 				<string>9A8823E221029B23C9DBAFD35591844F</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
 			<key>dependencies</key>
-			<array>
-				<string>25759D9B83CB742FD770B48ED53641E2</string>
-			</array>
+			<array/>
 			<key>isa</key>
 			<string>PBXNativeTarget</string>
 			<key>name</key>
@@ -1566,7 +1396,7 @@
 			<key>productName</key>
 			<string>Threader</string>
 			<key>productReference</key>
-			<string>083A753BD805FD853CA9D6D42F7F6649</string>
+			<string>DDBD09EF794815634ED8F5446836C9D6</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
@@ -1654,6 +1484,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>DDBD09EF794815634ED8F5446836C9D6</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Threader.framework</string>
+			<key>path</key>
+			<string>Threader.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
 		<key>DE76CD41F1532CF587F9FC27DD76D439</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -1731,31 +1576,6 @@
 			<string>Target Support Files/Pods-Threader_Tests</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F16A78510FF1A1CFE0E35CEE535D8F21</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>4174531576CB0478FAB5308F4AC4B4FC</string>
-			<key>buildPhases</key>
-			<array>
-				<string>D8769DA96497A94AFDDD18E1032016B9</string>
-				<string>8E9E1D8FC30E2A28BC214E340CD86AC1</string>
-				<string>172E2E5E435DBF1CD83414F3F160EFB6</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Threader-Threader</string>
-			<key>productName</key>
-			<string>Threader-Threader</string>
-			<key>productReference</key>
-			<string>28E14A16098EA17A5A7F44CFF4B0C723</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
 		</dict>
 		<key>FAADE607C2D4AF68D34F38E405496471</key>
 		<dict>

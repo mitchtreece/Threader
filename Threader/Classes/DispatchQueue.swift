@@ -53,7 +53,7 @@ public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible
     }
     
     /**
-     Convienience function that returns the main dispatch queue.
+     Convenience function that returns the main dispatch queue.
      
      - returns: `dispatch_queue_t`. The main dispatch queue.
      */
@@ -62,7 +62,7 @@ public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible
     }
     
     /**
-     Convienience function that returns a global dispatch queue with a given `dispatch_queue_priority_t`.
+     Convenience function that returns a global dispatch queue with a given `dispatch_queue_priority_t`.
      
      - returns: `dispatch_queue_t`. A global dispatch queue.
      */
@@ -71,7 +71,7 @@ public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible
     }
     
     /**
-     Convienience function that returns the global user interactive dispatch queue.
+     Convenience function that returns the global user interactive dispatch queue.
      
      - returns: `dispatch_queue_t`. The global user interactive dispatch queue.
      */
@@ -80,7 +80,7 @@ public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible
     }
     
     /**
-     Convienience function that returns the global user initiated dispatch queue.
+     Convenience function that returns the global user initiated dispatch queue.
      
      - returns: `dispatch_queue_t`. The global user initiated dispatch queue.
      */
@@ -89,7 +89,7 @@ public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible
     }
     
     /**
-     Convienience function that returns the global utility dispatch queue.
+     Convenience function that returns the global utility dispatch queue.
      
      - returns: `dispatch_queue_t`. The global utility dispatch queue.
      */
@@ -98,7 +98,7 @@ public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible
     }
     
     /**
-     Convienience function that returns the global background dispatch queue.
+     Convenience function that returns the global background dispatch queue.
      
      - returns: `dispatch_queue_t`. The global background dispatch queue.
      */

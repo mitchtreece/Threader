@@ -8,6 +8,21 @@
 
 import Foundation
 
+private struct ThreadDepth {
+    static let key = "threader.thread.depth"
+    static let max = 20
+}
+
+/**
+ `Thread` provides a simple way to specify how a block of code is executed.
+ 
+ - Immediate:      executes code immediately.
+ - Main:           executes code on the main thread.
+ - Dispatch:       executes code on a given `DispatchQueue`.
+ - Operation:      executes code on a given `NSOperationQueue`.
+ - Block:          executes code from a closure.
+ - Default:        executes code on the current thread, or on a global `DispatchQueue` depending on the block of code's current position in the thread.
+ */
 public enum Thread {
     
     public typealias ThreadExecutionBlock = ((Void) -> (Void))
@@ -16,9 +31,14 @@ public enum Thread {
     case Main
     case Dispatch(DispatchQueue)
     case Operation(NSOperationQueue)
-    case Closure((ThreadExecutionBlock) -> Void)
+    case Block((ThreadExecutionBlock) -> Void)
     case Default
     
+    /**
+     Runs the code block with respect to the current execution option.
+     
+     - parameter block: The code block.
+     */
     public func execute(block: ThreadExecutionBlock) {
         
         switch self {
@@ -26,27 +46,20 @@ public enum Thread {
         case .Main: DispatchQueue.AsyncMain.execute(block)
         case .Dispatch(let dispatchQueue): dispatchQueue.execute(block)
         case .Operation(let operationQueue): operationQueue.addOperationWithBlock(block)
-        case .Closure(let aClosure): aClosure(block)
+        case .Block(let aBlock): aBlock(block)
         case .Default:
             
-            struct Depth {
-                static let key = "thread.depth"
-                static let max = 20
-            }
-            
             let thread = NSThread.currentThread().threadDictionary
-            
             var lastDepth: Int
-            if let depth = thread[Depth.key] as? Int { lastDepth = depth }
+            
+            if let depth = thread[ThreadDepth.key] as? Int { lastDepth = depth }
             else { lastDepth = 0 }
             
-            if lastDepth > Depth.max {
-                DispatchQueue.AsyncGlobal(DISPATCH_QUEUE_PRIORITY_DEFAULT).execute(block)
-            }
+            if lastDepth > ThreadDepth.max { DispatchQueue.AsyncGlobal(DISPATCH_QUEUE_PRIORITY_DEFAULT).execute(block) }
             else {
-                thread[Depth.key] = lastDepth + 1
+                thread[ThreadDepth.key] = lastDepth + 1
                 block()
-                thread[Depth.key] = lastDepth
+                thread[ThreadDepth.key] = lastDepth
             }
             
         }
@@ -63,7 +76,7 @@ extension Thread: CustomStringConvertible, CustomDebugStringConvertible {
         case .Main: return "Thread.Main"
         case .Dispatch: return "Thread.Dispatch"
         case .Operation: return "Thread.Operation"
-        case .Closure: return "Thread.Closure"
+        case .Block: return "Thread.Block"
         case .Default: return "Thread.Default"
         }
     }

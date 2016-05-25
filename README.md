@@ -72,6 +72,7 @@ Like before, the above example simply executes the code within the block on the 
 - **AsyncMain** - executes the code block asynchronously on the main-queue.
 - **AsyncGlobal** - executes the code block asynchronously on the global-queue with a given `dispatch_queue_priority_t`.
 - **AsyncAfter** - executes the code block asynchronously with a given delay (`NSTimeInterval`), and `dispatch_queue_t`.
+- **BarrierAsync** - executes the code block asynchronously blocking on a given `dispatch_queue_t`.
 - **Sync** - executes the code block synchronously on a given `dispatch_queue_t`.
 - **BarrierSync** - executes the code block synchronously blocking on a given `dispatch_queue_t`.
 - **Once** - executes the code block once and only once for the lifetime of an application.

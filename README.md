@@ -40,8 +40,8 @@ Thread.Main.execute {
 The above simply executes the code within the block on the main-thread. Naturally, `Thread` also provides other execution options:
 
 - **Immediate** - executes the code block immediately on the current-thread.
-- **Dispatch** - executes the code block with a given `DispatchQueue`.
-- **Operation** - executes the code block with a given `NSOperationQueue`.
+- **Dispatch** - executes the code block on a given `DispatchQueue`.
+- **Operation** - executes the code block on a given `NSOperationQueue`.
 - **Block** - executes the code block from within a wrapper-block.
 - **Main** - executes the code block on the main-thread.
 - **Default** - executes the code block on the current-thread, _or_ on a global `DispatchQueue` depending on the block's current position in the thread.
@@ -73,6 +73,7 @@ Like before, the above example simply executes the code within the block on the 
 - **AsyncGlobal** - executes the code block asynchronously on the global-queue with a given `dispatch_queue_priority_t`.
 - **AsyncAfter** - executes the code block asynchronously with a given delay (`NSTimeInterval`), and `dispatch_queue_t`.
 - **Sync** - executes the code block synchronously on a given `dispatch_queue_t`.
+- **BarrierSync** - executes the code block synchronously blocking on a given `dispatch_queue_t`.
 - **Once** - executes the code block once and only once for the lifetime of an application.
 
 In addition to executing code, `DispatchQueue` also provides convenience functions for retrieving common queue's:

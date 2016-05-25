@@ -16,6 +16,7 @@ import Foundation
  - AsyncGlobal:     runs code asynchronously on the global queue with a given `dispatch_queue_priority_t`.
  - AsyncAfter:      runs code asynchronously with a given delay (`NSTimeInterval`), and `dispatch_queue_t`.
  - Sync:            runs code synchronously on a given `dispatch_queue_t`.
+ - BarrierSync:     runs code synchronously blocking on a given `dispatch_queue_t`.
  - Once:            runs code once and only once for the lifetime of the application.
  */
 public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible {
@@ -27,6 +28,7 @@ public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible
     case AsyncGlobal(dispatch_queue_priority_t)
     case AsyncAfter(NSTimeInterval, dispatch_queue_t)
     case Sync(dispatch_queue_t)
+    case BarrierSync(dispatch_queue_t)
     case Once(dispatch_once_t)
     
     /**
@@ -47,6 +49,7 @@ public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible
         case .AsyncGlobal(let priority): dispatch_async(dispatch_get_global_queue(priority, 0), block)
         case .AsyncAfter(let time, let queue): dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC))), queue, block)
         case .Sync(let queue): dispatch_sync(queue, block)
+        case .BarrierSync(let queue): dispatch_barrier_sync(queue, block)
         case .Once(var token): dispatch_once(&token, block)
         }
         
@@ -113,6 +116,7 @@ public enum DispatchQueue: CustomStringConvertible, CustomDebugStringConvertible
         case .AsyncGlobal(let priority): return "DispatchQueue.AsyncGlobal, Priority -> \(priority)"
         case .AsyncAfter(let time, let queue): return "DispatchQueue.AsyncAfter, After -> \(time), Queue -> \(queue)"
         case .Sync(let queue): return "DispatchQueue.Sync, Queue -> \(queue)"
+        case .BarrierSync(let queue): return "DispatchQueue.BarrierSync, Queue -> \(queue)"
         case .Once(let token): return "DispatchQueue.Once, Token -> \(token)"
         }
     }

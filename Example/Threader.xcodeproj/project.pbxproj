@@ -215,9 +215,13 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = KKSYLRXR4A;
+						DevelopmentTeamName = "Mitch Treece";
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = KKSYLRXR4A;
+						DevelopmentTeamName = "Mitch Treece";
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};

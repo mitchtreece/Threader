@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        waitingOverlayView.hidden = true
-        delaySlider.addTarget(self, action: #selector(sliderDidSlide(_:)), forControlEvents: .ValueChanged)
+        waitingOverlayView.isHidden = true
+        delaySlider.addTarget(self, action: #selector(sliderDidSlide), for: .valueChanged)
                 
     }
     
@@ -34,34 +34,34 @@ class ViewController: UIViewController {
     
     @IBAction func dispatchAfter() {
         
-        waitingOverlayView.hidden = false
-        Thread.Dispatch(.AsyncAfter(Double(delayInSeconds), DispatchQueue.mainQueue())).execute {
-            self.waitingOverlayView.hidden = true
-            self.alert("Thread", "Thread.Dispatch(.AsyncAfter)")
+        waitingOverlayView.isHidden = false
+        Threader.DispatchAsyncAfter(.now() + Double(delayInSeconds), .main).execute {
+            self.waitingOverlayView.isHidden = true
+            self.alert("Threader", "DispatchAsyncAfter")
         }
         
     }
     
     @IBAction func dispatchMain() {
-        
-        Thread.Dispatch(.AsyncMain).execute {
-            self.alert("Thread", "Thread.Dispatch(.AsyncMain)")
+
+        Threader.DispatchAsyncMain.execute { 
+            self.alert("Threader", "DispatchAsyncMain")
         }
         
     }
     
     @IBAction func dispatchQueue() {
         
-        DispatchQueue.Async(DispatchQueue.mainQueue()).execute {
-            self.alert("DispatchQueue", "DispatchQueue.Async")
+        Threader.DispatchAsync(.main).execute {
+            self.alert("Threader", "DispatchAsync")
         }
         
     }
     
-    func alert(title: String, _ message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
-        presentViewController(alertController, animated: true, completion: nil)
+    func alert(_ title: String, _ message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

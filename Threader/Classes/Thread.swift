@@ -1,5 +1,5 @@
 //
-//  Thread.swift
+//  Threader.swift
 //  Threader
 //
 //  Created by Mitch Treece on 4/25/16.
@@ -14,23 +14,35 @@ private struct ThreadDepth {
 }
 
 /**
- `Thread` provides a simple way to specify how a block of code is executed.
+ `Threader` provides a simple way to specify how a block of code is executed.
  
- - Immediate:      executes code immediately.
- - Main:           executes code on the main thread.
- - Dispatch:       executes code on a given `DispatchQueue`.
- - Operation:      executes code on a given `NSOperationQueue`.
- - Block:          executes code from a closure.
- - Default:        executes code on the current thread, or on a global `DispatchQueue` depending on the block of code's current position in the thread.
+ - Immediate:           executes code immediately.
+ - DispatchAsync:       executes code on a given `DispatchQueue` asynchronously.
+ - DispatchAsyncMain:   executes code on the main thread.
+ - DispatchAsyncGlobal  executes code on the global queue.
+ - DispatchAsyncAfter   executes code on a given `DispatchQueue` after a given amount of time.
+ - DispatchAsyncBarrier executes code asynchronously blocking on a given `DispatchQueue`.
+ - DispatchSync:        executes code on a given `DispatchQueue` synchronously.
+ - DispatchSyncBarrier  executes code synchronously blocking on a given `DispatchQueue`.
+ - Operation:           executes code on a given `NSOperationQueue`.
+ - Block:               executes code from a closure.
+ - Default:             executes code on the current thread, or on a global `DispatchQueue` depending on the block of code's current position in the thread.
  */
-public enum Thread {
+public enum Threader {
     
-    public typealias ThreadExecutionBlock = ((Void) -> (Void))
+    public typealias ThreadExecutionBlock = () -> ()
     
     case Immediate
-    case Main
-    case Dispatch(DispatchQueue)
-    case Operation(NSOperationQueue)
+    
+    case DispatchAsync(DispatchQueue)
+    case DispatchAsyncMain
+    case DispatchAsyncGlobal
+    case DispatchAsyncAfter(DispatchTime, DispatchQueue)
+    case DispatchAsyncBarrier(DispatchQueue)
+    case DispatchSync(DispatchQueue)
+    case DispatchSyncBarrier(DispatchQueue)
+    
+    case Operation(OperationQueue)
     case Block((ThreadExecutionBlock) -> Void)
     case Default
     
@@ -43,19 +55,26 @@ public enum Thread {
         
         switch self {
         case .Immediate: block()
-        case .Main: DispatchQueue.AsyncMain.execute(block)
-        case .Dispatch(let dispatchQueue): dispatchQueue.execute(block)
-        case .Operation(let operationQueue): operationQueue.addOperationWithBlock(block)
+            
+        case .DispatchAsync(let dispatchQueue): dispatchQueue.async(execute: block)
+        case .DispatchAsyncMain: DispatchQueue.main.async(execute: block)
+        case .DispatchAsyncGlobal: DispatchQueue.global().async(execute: block)
+        case .DispatchAsyncAfter(let time, let dispatchQueue): dispatchQueue.after(when: time, execute: block)
+        case .DispatchAsyncBarrier(let dispatchQueue): __dispatch_barrier_async(dispatchQueue, block)
+        case .DispatchSync(let dispatchQueue): dispatchQueue.sync(execute: block);
+        case .DispatchSyncBarrier(let dispatchQueue): __dispatch_barrier_sync(dispatchQueue, block)
+            
+        case .Operation(let operationQueue): operationQueue.addOperation(block)
         case .Block(let aBlock): aBlock(block)
         case .Default:
             
-            let thread = NSThread.currentThread().threadDictionary
+            let thread = Thread.current().threadDictionary
             var lastDepth: Int
             
             if let depth = thread[ThreadDepth.key] as? Int { lastDepth = depth }
             else { lastDepth = 0 }
             
-            if lastDepth > ThreadDepth.max { DispatchQueue.AsyncGlobal(DISPATCH_QUEUE_PRIORITY_DEFAULT).execute(block) }
+            if lastDepth > ThreadDepth.max { DispatchQueue.global().async(execute: block) }
             else {
                 thread[ThreadDepth.key] = lastDepth + 1
                 block()
@@ -68,16 +87,21 @@ public enum Thread {
     
 }
 
-extension Thread: CustomStringConvertible, CustomDebugStringConvertible {
+extension Threader: CustomStringConvertible, CustomDebugStringConvertible {
     
     public var description: String {
         switch self {
-        case .Immediate: return "Thread.Immediate"
-        case .Main: return "Thread.Main"
-        case .Dispatch: return "Thread.Dispatch"
-        case .Operation: return "Thread.Operation"
-        case .Block: return "Thread.Block"
-        case .Default: return "Thread.Default"
+        case .Immediate: return "Threader.Immediate"
+        case .DispatchAsync: return "Threader.DispatchAsync"
+        case .DispatchAsyncMain: return "Threader.DispatchAsyncMain"
+        case .DispatchAsyncGlobal: return "Threader.DispatchAsyncGlobal"
+        case .DispatchAsyncAfter: return "Threader.DispatchAsyncAfter"
+        case .DispatchAsyncBarrier: return "Threader.DispatchAsyncBarrier"
+        case .DispatchSync: return "Threader.DispatchSync"
+        case .DispatchSyncBarrier: return "Threader.DispatchSyncBarrier"
+        case .Operation: return "Threader.Operation"
+        case .Block: return "Threader.Block"
+        case .Default: return "Threader.Default"
         }
     }
     

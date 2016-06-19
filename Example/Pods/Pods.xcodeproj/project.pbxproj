@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020B6FBEDDFD2F131A53A1369650773F /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6CA2CB2FF121CC25B88DA71AFBE4A /* Thread.swift */; };
+		020B6FBEDDFD2F131A53A1369650773F /* Threader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6CA2CB2FF121CC25B88DA71AFBE4A /* Threader.swift */; };
 		0E0114B46D692935B73B12CD038C5CE4 /* Threader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA254D2972B8604A63A2559E997EC890 /* Threader-dummy.m */; };
 		3017B74E69C182AB089DC933C24DA5B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		34EEC6767E749493B762F732F2FAD294 /* Pods-Threader_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89F3871DA6140A81EEFA27378AAF7A63 /* Pods-Threader_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -58,7 +58,7 @@
 		9DF06E76A5F8A349C10ACE369C497A33 /* Pods_Threader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Threader_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A037B82A9F2CCABE670BF69714B9A8EF /* Pods_Threader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Threader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A376A3F3845D247633277823BAB01959 /* Pods-Threader_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Threader_Tests.modulemap"; sourceTree = "<group>"; };
-		A7E6CA2CB2FF121CC25B88DA71AFBE4A /* Thread.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		A7E6CA2CB2FF121CC25B88DA71AFBE4A /* Threader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Threader.swift; sourceTree = "<group>"; };
 		B1E5B8F362AD1703BCD4EF3C298DF1C7 /* Pods-Threader_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Threader_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B63D6FD6F3F5B3EB3C5E87002EA9FD64 /* Pods-Threader_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Threader_Example.modulemap"; sourceTree = "<group>"; };
 		B75EE9D73282F23852CDD7C5F10723E6 /* Pods-Threader_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Threader_Example-resources.sh"; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		54FDA299B83D408CB821C18E5996516F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A7E6CA2CB2FF121CC25B88DA71AFBE4A /* Thread.swift */,
+				A7E6CA2CB2FF121CC25B88DA71AFBE4A /* Threader.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020B6FBEDDFD2F131A53A1369650773F /* Thread.swift in Sources */,
+				020B6FBEDDFD2F131A53A1369650773F /* Threader.swift in Sources */,
 				0E0114B46D692935B73B12CD038C5CE4 /* Threader-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

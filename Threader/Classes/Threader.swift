@@ -9,7 +9,7 @@
 import Foundation
 
 private struct ThreadDepth {
-    static let key = "threader.thread.depth"
+    static let key = "threader.threadDepth"
     static let max = 20
 }
 

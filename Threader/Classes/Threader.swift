@@ -51,7 +51,7 @@ public enum Threader {
      
      - parameter block: The code block.
      */
-    public func execute(block: ThreadExecutionBlock) {
+    public func execute(block: @escaping ThreadExecutionBlock) {
         
         switch self {
         case .Immediate: block()
@@ -59,7 +59,7 @@ public enum Threader {
         case .DispatchAsync(let dispatchQueue): dispatchQueue.async(execute: block)
         case .DispatchAsyncMain: DispatchQueue.main.async(execute: block)
         case .DispatchAsyncGlobal: DispatchQueue.global().async(execute: block)
-        case .DispatchAsyncAfter(let time, let dispatchQueue): dispatchQueue.after(when: time, execute: block)
+        case .DispatchAsyncAfter(let time, let dispatchQueue): dispatchQueue.asyncAfter(deadline: time, execute: block)
         case .DispatchAsyncBarrier(let dispatchQueue): __dispatch_barrier_async(dispatchQueue, block)
         case .DispatchSync(let dispatchQueue): dispatchQueue.sync(execute: block);
         case .DispatchSyncBarrier(let dispatchQueue): __dispatch_barrier_sync(dispatchQueue, block)
@@ -68,7 +68,7 @@ public enum Threader {
         case .Block(let aBlock): aBlock(block)
         case .Default:
             
-            let thread = Thread.current().threadDictionary
+            let thread = Thread.current.threadDictionary
             var lastDepth: Int
             
             if let depth = thread[ThreadDepth.key] as? Int { lastDepth = depth }

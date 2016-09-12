@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     @IBAction func dispatchAfter() {
         
         waitingOverlayView.isHidden = false
-        Threader.DispatchAsyncAfter(.now() + Double(delayInSeconds), .main).execute {
+        Threader.dispatchAsyncAfter(time: .now() + Double(delayInSeconds), on: .main).execute {
             self.waitingOverlayView.isHidden = true
             self.alert("Threader", "DispatchAsyncAfter")
         }
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     
     @IBAction func dispatchMain() {
 
-        Threader.DispatchAsyncMain.execute { 
+        Threader.dispatchAsyncMain.execute { 
             self.alert("Threader", "DispatchAsyncMain")
         }
         
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     
     @IBAction func dispatchQueue() {
         
-        Threader.DispatchAsync(.main).execute {
+        Threader.dispatchAsync(on: .main).execute {
             self.alert("Threader", "DispatchAsync")
         }
         

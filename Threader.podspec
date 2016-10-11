@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name             = "Threader"
-  s.version          = "1.0.2"
+  s.version          = "1.1.0"
   s.summary          = "Pretty GCD calls and easier code execution."
   s.description      = <<-DESC
     Threader makes GCD calls easy to read & write.
